@@ -86,15 +86,15 @@ export default function HomePage() {
 
             {/* PHOTO */}
             <div className="flex justify-center md:justify-end">
-              <div className="relative h-56 w-56 rounded-full bg-white shadow-lg">
-  <Image
-    src="/profile.png"
-    alt="Abdoulaye Diallo"
-    fill
-    className="object-contain scale-110"
-    priority
-  />
-</div>
+                <div className="relative h-59 w-59 overflow-hidden rounded-full bg-white shadow-md">
+                <Image
+                  src="/profile.jpg"
+                  alt="Abdoulaye Diallo"
+                  fill
+                  className="object-contain scale-110"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export default function HomePage() {
             <div className="p-6 md:p-7">
               <div className="relative h-48 w-48 overflow-hidden rounded-full bg-white shadow-md">
   <Image
-    src="/profile.png"
+    src="/profile.jpg"
     alt="Abdoulaye Diallo"
     fill
     className="object-contain scale-110"

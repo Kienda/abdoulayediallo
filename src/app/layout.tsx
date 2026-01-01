@@ -18,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-neutral-900 antialiased">
-        <Navbar />
-        <main className="min-h-[70vh]">{children}</main>
-        <Footer />
-      </body>
+  <Navbar />
+  <main className="min-h-[70vh]">{children}</main>
+  <Footer />
+</body>
     </html>
   );
 }
