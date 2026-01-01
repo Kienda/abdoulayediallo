@@ -24,13 +24,13 @@ export default function Navbar() {
             <Link className="text-white/90 hover:text-white" href="/projects">
               Projects
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/resume">
+            <Link className="text-white/90 hover:text-white" href="/Resume-AbdoulayeDiallo.pdf"  target="_blank">
               Resume
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/about">
+            <Link className="text-white/90 hover:text-white" href="/#about">
               About
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/contact">
+            <Link className="text-white/90 hover:text-white" href="/#contact">
               Contact
             </Link>
           </nav>

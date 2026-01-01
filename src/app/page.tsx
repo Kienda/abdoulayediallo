@@ -19,8 +19,8 @@ const skillCards: SkillCard[] = [
     subtitle: "Building scalable systems that solve real problems",
     description:
       "I develop reliable, high-performance applications focused on accessibility, efficiency, and long-term impact—bridging technology and real-world needs.",
-    href: "/projects/software-engineering",
-    footer: "React · Next.js · Node · APIs · Databases",
+    href: "/projects/",
+    footer: "React · Next.js · Node · APIs · Databases · Deployment",
     imageSrc: "/projects/software.jpg",
   },
   {
@@ -28,7 +28,7 @@ const skillCards: SkillCard[] = [
     subtitle: "Designing clear, human-centered digital experiences",
     description:
       "I translate ideas into thoughtful interfaces aligned with culture, values, and purpose—prioritizing usability, clarity, and visual balance.",
-    href: "/projects/design",
+    href: "/projects/",
     footer: "Figma · Adobe · UX/UI · Design Systems · Branding",
     imageSrc: "/projects/design.jpg",
   },
@@ -37,7 +37,7 @@ const skillCards: SkillCard[] = [
     subtitle: "Positioning brands to grow in the digital world",
     description:
       "I help businesses reach the right audience through strategic positioning, data-driven campaigns, and digital experiences that convert.",
-    href: "/projects/digital-marketing",
+    href: "/projects/",
     footer: "SEO · Analytics · Funnels · Content · Ads",
     imageSrc: "/projects/marketing.jpg",
   },
@@ -69,14 +69,15 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="/resume"
+                  href="/Resume-AbdoulayeDiallo.pdf"
                   className="rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] hover:bg-blue-50"
+                   target="_blank"
                 >
                   Resume
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] hover:bg-blue-50"
                 >
                   Contact Me
@@ -127,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT */}
-      <section className="py-10">
+      <section id="about" className="py-10 scroll-mt-24" >
         <Container>
           <div className="mb-3 text-sm font-semibold text-neutral-800">About:</div>
 
@@ -162,7 +163,7 @@ export default function HomePage() {
       </section>
 
       {/* CONTACT */}
-      <section className="py-10">
+      <section id="contact" className="py-10 scroll-mt-24">
         <Container>
           <div className="text-center text-sm font-semibold text-neutral-800">Contact:</div>
 
