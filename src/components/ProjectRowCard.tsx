@@ -1,5 +1,4 @@
 // src/components/ProjectRowCard.tsx
-import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 
