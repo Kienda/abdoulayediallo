@@ -1,52 +1,62 @@
-// src/data/projects.ts
-export type ProjectCategory = "web" | "design" | "marketing";
-
-export type Project = {
-  slug: string;
-  title: string;
-  category: ProjectCategory;
-  summary: string; 
-  tags: string[];
-  featured?: boolean;
-  year?: string;
-  links?: {
-    caseStudy?: string; 
-    demo?: string;
-    github?: string;
-    figma?: string;
-  };
-  thumbnail?: string; 
-};
-
 export const projects: Project[] = [
   {
-    slug: "sample-webapp",
-    title: "Sample Web App",
+    slug: "studentsuccess",
+    title: "StudentSuccess, Academic Guidance Platform",
     category: "web",
-    summary: "Built a web app to solve a real user workflow end-to-end.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+    summary:
+      "A full-stack academic guidance platform with authentication, role-based access, and personalized student dashboards backed by PostgreSQL.",
+    tags: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "JWT",
+      "Handlebars",
+      "Full-Stack",
+    ],
     featured: true,
-    links: { caseStudy: "/projects/sample-webapp", demo: "#", github: "#" },
+    links: {
+      github: "https://github.com/Kienda/StudentSuccess",
+    },
     thumbnail: "/projects/software.jpg",
   },
   {
-    slug: "sample-design",
-    title: "Sample UI/UX Case Study",
+    slug: "uiux-case-studies",
+    title: "UI/UX Case Studies",
     category: "design",
-    summary: "Designed a clear, human-centered experience with a reusable system.",
-    tags: ["Figma", "UI/UX", "Design System"],
+    summary: "High-fidelity UI/UX prototypes and product design work.",
+    tags: ["Figma", "UI/UX", "Design Systems"],
     featured: true,
-    links: { caseStudy: "/projects/sample-design", figma: "#" },
+    links: {
+      github: "https://github.com/Kienda/StudentSuccess",
+    },
     thumbnail: "/projects/design.jpg",
   },
   {
     slug: "sample-marketing",
-    title: "Sample Digital Campaign",
+    title: "Digital Marketing Campaigns",
     category: "marketing",
-    summary: "Positioned a brand with strategy, content, and conversion-focused design.",
+    summary:
+      "Positioned brands through strategy, analytics, and conversion-focused digital experiences.",
     tags: ["SEO", "Analytics", "Content"],
     featured: false,
-    links: { caseStudy: "/projects/sample-marketing" },
+     links: {
+      github: "https://github.com/Kienda/StudentSuccess",
+    },
     thumbnail: "/projects/marketing.jpg",
   },
+
+  {
+  slug: "college-navigator",
+  title: "College Navigator — Desktop Academic Guidance App",
+  category: "web", // still Software Engineering
+  summary:
+    "A Qt/C++ desktop application that helps college students track academic milestones and receive personalized academic and career guidance.",
+  tags: ["C++", "Qt", "SQLite", "Desktop App"],
+  featured: false,
+  links: {
+    github: "https://github.com/Kienda/HonorsProject",
+  },
+  thumbnail: "/projects/software.jpg",
+},
+
 ];

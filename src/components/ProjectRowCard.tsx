@@ -33,12 +33,17 @@ export default function ProjectRowCard({ project }: { project: Project }) {
           </p>
 
           <div className="mt-5 flex items-center justify-end">
-            <Link
-              href={project.links?.caseStudy ?? "/projects"}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1f55c6] hover:underline"
-            >
-              View Projects <span aria-hidden>→</span>
-            </Link>
+            {project.links?.github && (
+  <a
+    href={project.links.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1f55c6] hover:underline"
+  >
+    View Project <span aria-hidden>→</span>
+  </a>
+)}
+
           </div>
         </div>
       </div>

@@ -44,11 +44,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       {/* actions */}
       <div className="mt-5 flex items-center gap-3">
         <Link
-          href={project.links?.caseStudy ?? "/projects"}
-          className="text-sm font-semibold text-[#1f55c6] hover:underline"
-        >
-          Read Case Study →
-        </Link>
+  href={`/projects/${project.slug}`}
+  className="text-sm font-semibold text-[#1f55c6] hover:underline"
+>
+  Read Case Study →
+</Link>
+
 
         {project.links?.demo ? (
           <a
