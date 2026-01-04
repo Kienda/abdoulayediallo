@@ -23,11 +23,12 @@ export const projects: Project[] = [
     slug: "uiux-case-studies",
     title: "UI/UX Case Studies",
     category: "design",
-    summary: "High-fidelity UI/UX prototypes and product design work.",
+    summary:
+  "Led UI/UX design for a student housing review platform, delivering brand identity, design system, and high-fidelity prototypes in Figma.",
     tags: ["Figma", "UI/UX", "Design Systems"],
     featured: true,
     links: {
-      github: "https://github.com/Kienda/StudentSuccess",
+      github: "https://github.com/Kienda/columbiacribs-uiux",
     },
     thumbnail: "/projects/design.jpg",
   },
