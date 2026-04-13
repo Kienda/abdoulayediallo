@@ -57,22 +57,22 @@ export default function Footer() {
             <div className="mb-3 font-semibold">Connect</div>
             <ul className="space-y-2 text-white/85">
               <li>
-                <a className="hover:text-white" href="#" target="_blank" rel="noreferrer">
+                <a className="hover:text-white" href="https://www.linkedin.com/in/abdoulaye-alhassane-diallo/" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a className="hover:text-white" href="#" target="_blank" rel="noreferrer">
+                <a className="hover:text-white" href="https://github.com/Kienda" target="_blank" rel="noreferrer">
                   GitHub
                 </a>
               </li>
               <li>
-                <a className="hover:text-white" href="#" target="_blank" rel="noreferrer">
+                <a className="hover:text-white" href="https://www.instagram.com/abdoulayealhassane/" target="_blank" rel="noreferrer">
                   Instagram
                 </a>
               </li>
               <li>
-                <a className="hover:text-white" href="#" target="_blank" rel="noreferrer">
+                <a className="hover:text-white" href="https://www.facebook.com/abdoulaye.alhassane.diallo.2025" target="_blank" rel="noreferrer">
                   Facebook
                 </a>
               </li>
