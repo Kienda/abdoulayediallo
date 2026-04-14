@@ -74,7 +74,7 @@ export const projects: Project[] = [
       "End-to-end UI/UX case study for a student housing review platform — brand identity, design system, and high-fidelity Figma prototypes.",
     tags: ["Figma", "UI/UX", "Design Systems", "Prototyping"],
     featured: false,
-    year: "2024",
+    year: "2026",
     color: "pink",
     links: {
       github: "https://github.com/Kienda/columbiacribs-uiux",
