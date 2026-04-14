@@ -2,6 +2,7 @@
 import Container from "@/components/Container";
 import Link from "next/link";
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
 
 type SkillCard = {
@@ -168,28 +169,7 @@ export default function HomePage() {
           <div className="text-center text-sm font-semibold text-neutral-800">Contact:</div>
 
           <div className="mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-            <div className="grid gap-6 p-6 md:grid-cols-2 md:p-8">
-              {/* Left */}
-              <div className="space-y-4">
-                <Field label="Full name:" placeholder="" />
-                <Field label="Email:" placeholder="" />
-
-                <button className="mt-2 rounded-lg bg-[#1f55c6] px-6 py-2.5 text-sm font-semibold text-white hover:opacity-95">
-                  Submit
-                </button>
-              </div>
-
-              {/* Right */}
-              <div>
-                <label className="mb-2 block text-xs font-semibold text-neutral-700">
-                  Message:
-                </label>
-                <textarea
-                  className="h-32 w-full resize-none rounded-xl border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-[#1f55c6]"
-                  placeholder=""
-                />
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </Container>
       </section>
@@ -242,14 +222,3 @@ function SkillCard({ card }: { card: SkillCard }) {
   );
 }
 
-function Field({ label, placeholder }: { label: string; placeholder: string }) {
-  return (
-    <div>
-      <label className="mb-2 block text-xs font-semibold text-neutral-700">{label}</label>
-      <input
-        className="h-10 w-full rounded-xl border border-neutral-200 px-4 text-sm outline-none focus:border-[#1f55c6]"
-        placeholder={placeholder}
-      />
-    </div>
-  );
-}
