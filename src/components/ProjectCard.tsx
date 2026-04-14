@@ -5,7 +5,6 @@ import type { Project } from "@/data/projects";
 const categoryLabel: Record<Project["category"], string> = {
   web: "Web App",
   design: "Design",
-  marketing: "Digital Marketing",
 };
 
 export default function ProjectCard({ project }: { project: Project }) {

@@ -53,8 +53,9 @@ export default function ContactForm() {
         {/* Left */}
         <div className="space-y-4">
           <div>
-            <label className="mb-2 block text-xs font-semibold text-neutral-700">Full name:</label>
+            <label htmlFor="contact-name" className="mb-2 block text-xs font-semibold text-neutral-700">Full name:</label>
             <input
+              id="contact-name"
               className="h-10 w-full rounded-xl border border-neutral-200 px-4 text-sm outline-none focus:border-[#1f55c6]"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -62,8 +63,9 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="mb-2 block text-xs font-semibold text-neutral-700">Email:</label>
+            <label htmlFor="contact-email" className="mb-2 block text-xs font-semibold text-neutral-700">Email:</label>
             <input
+              id="contact-email"
               type="email"
               className="h-10 w-full rounded-xl border border-neutral-200 px-4 text-sm outline-none focus:border-[#1f55c6]"
               value={email}
@@ -92,8 +94,9 @@ export default function ContactForm() {
 
         {/* Right */}
         <div>
-          <label className="mb-2 block text-xs font-semibold text-neutral-700">Message:</label>
+          <label htmlFor="contact-message" className="mb-2 block text-xs font-semibold text-neutral-700">Message:</label>
           <textarea
+            id="contact-message"
             className="h-32 w-full resize-none rounded-xl border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-[#1f55c6]"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

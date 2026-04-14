@@ -10,7 +10,6 @@ const filters: { label: string; value: "all" | ProjectCategory }[] = [
   { label: "All", value: "all" },
   { label: "Software Engineering", value: "web" },
   { label: "Design", value: "design" },
-  { label: "Digital Marketing", value: "marketing" },
 ];
 
 export default function ProjectsPage() {
@@ -38,7 +37,7 @@ export default function ProjectsPage() {
       <section className="py-12">
         <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
         <p className="mt-3 max-w-2xl text-neutral-700">
-          A selection of work across software engineering, design, and digital marketing.
+          A selection of software engineering and design projects — full-stack apps, desktop tools, and UI/UX work.
         </p>
 
         {/* Filters + Search */}

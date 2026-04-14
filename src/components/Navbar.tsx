@@ -15,7 +15,7 @@ export default function Navbar() {
 
             <div className="leading-tight">
               <div className="text-base font-semibold">Abdoulaye Diallo</div>
-              <div className="text-xs text-white/80">The Future is now</div>
+              <div className="text-xs text-white/80">Software Engineer</div>
             </div>
           </Link>
 

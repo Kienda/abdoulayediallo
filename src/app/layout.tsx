@@ -5,9 +5,23 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Abdoulaye Diallo | Software Engineer • Product Designer • Digital Growth Builder",
+  title: "Abdoulaye Diallo | Software Engineer",
   description:
-    "I help ideas become scalable digital products — from design to deployment to growth.",
+    "CS student at Columbia University building production web applications. Looking for Software Engineering internships for Summer 2026.",
+  openGraph: {
+    title: "Abdoulaye Diallo | Software Engineer",
+    description:
+      "CS student at Columbia University building production web applications. Looking for Software Engineering internships for Summer 2026.",
+    url: "https://abdoulayediallo.com",
+    siteName: "Abdoulaye Diallo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abdoulaye Diallo | Software Engineer",
+    description:
+      "CS student at Columbia University building production web applications. Looking for Software Engineering internships for Summer 2026.",
+  },
 };
 
 export default function RootLayout({

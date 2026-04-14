@@ -1,6 +1,8 @@
 // src/data/projects.ts
 
-export type ProjectCategory = "web" | "design" | "marketing";
+export type ProjectCategory = "web" | "design";
+
+export type ProjectColor = "blue" | "green" | "purple" | "pink";
 
 export type Project = {
   slug: string;
@@ -10,6 +12,7 @@ export type Project = {
   tags: string[];
   featured?: boolean;
   year?: string;
+  color?: ProjectColor;
   links?: {
     demo?: string;
     github?: string;
@@ -22,54 +25,59 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "studentsuccess",
-    title: "StudentSuccess — Academic Guidance Platform",
+    title: "StudentSuccess",
     category: "web",
     summary:
-      "A full-stack academic guidance platform with authentication, role-based access, and personalized student dashboards backed by PostgreSQL.",
-    tags: ["Node.js", "Express", "PostgreSQL", "JWT", "Handlebars", "Full-Stack"],
+      "Full-stack academic guidance platform with role-based auth (admin/student), personalized dashboards, and CRUD operations backed by PostgreSQL.",
+    tags: ["Node.js", "Express", "PostgreSQL", "JWT", "Handlebars", "bcrypt"],
     featured: true,
+    year: "2024",
+    color: "blue",
     links: {
       github: "https://github.com/Kienda/StudentSuccess",
     },
-    thumbnail: "/projects/software.jpg",
-  },
-  {
-    slug: "uiux-case-studies",
-    title: "UI/UX Case Studies",
-    category: "design",
-    summary:
-      "Led UI/UX design for a student housing review platform, delivering brand identity, design system, and high-fidelity prototypes in Figma.",
-    tags: ["Figma", "UI/UX", "Design Systems"],
-    featured: true,
-    links: {
-      github: "https://github.com/Kienda/columbiacribs-uiux",
-    },
-    thumbnail: "/projects/design.jpg",
-  },
-  {
-    slug: "digital-marketing",
-    title: "Digital Marketing Campaigns",
-    category: "marketing",
-    summary:
-      "Positioned brands through strategy, analytics, and conversion-focused digital experiences.",
-    tags: ["SEO", "Analytics", "Content"],
-    featured: false,
-    links: {
-      github: "https://github.com/Kienda/StudentSuccess",
-    },
-    thumbnail: "/projects/marketing.jpg",
   },
   {
     slug: "college-navigator",
-    title: "College Navigator — Desktop Academic Guidance App",
+    title: "College Navigator",
     category: "web",
     summary:
-      "A Qt/C++ desktop application that helps college students track milestones and receive personalized academic and career guidance.",
+      "Desktop academic tracking app built in C++ with Qt and SQLite. Helps students track milestones and receive personalized academic guidance.",
     tags: ["C++", "Qt", "SQLite", "Desktop App"],
-    featured: false,
+    featured: true,
+    year: "2023",
+    color: "green",
     links: {
       github: "https://github.com/Kienda/HonorsProject",
     },
-    thumbnail: "/projects/software.jpg",
+  },
+  {
+    slug: "portfolio",
+    title: "Personal Portfolio",
+    category: "web",
+    summary:
+      "This site — built with Next.js, TypeScript, and Tailwind. Includes a working contact form via Resend, deployed on Vercel with Cloudflare DNS.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Resend", "Vercel"],
+    featured: true,
+    year: "2025",
+    color: "purple",
+    links: {
+      github: "https://github.com/Kienda/abdoulayediallo",
+      demo: "https://abdoulayediallo.com",
+    },
+  },
+  {
+    slug: "uiux-case-studies",
+    title: "ColumbiaCribs UI/UX",
+    category: "design",
+    summary:
+      "End-to-end UI/UX case study for a student housing review platform — brand identity, design system, and high-fidelity Figma prototypes.",
+    tags: ["Figma", "UI/UX", "Design Systems", "Prototyping"],
+    featured: false,
+    year: "2024",
+    color: "pink",
+    links: {
+      github: "https://github.com/Kienda/columbiacribs-uiux",
+    },
   },
 ];
