@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "Full-stack academic guidance platform with role-based auth (admin/student), personalized dashboards, and CRUD operations backed by PostgreSQL.",
     tags: ["Node.js", "Express", "PostgreSQL", "JWT", "Handlebars", "bcrypt"],
     featured: true,
-    year: "2024",
+    year: "2025",
     color: "blue",
     links: {
       github: "https://github.com/Kienda/StudentSuccess",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       "Desktop academic tracking app built in C++ with Qt and SQLite. Helps students track milestones and receive personalized academic guidance.",
     tags: ["C++", "Qt", "SQLite", "Desktop App"],
     featured: true,
-    year: "2023",
+    year: "2024",
     color: "green",
     links: {
       github: "https://github.com/Kienda/HonorsProject",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
       "This site — built with Next.js, TypeScript, and Tailwind. Includes a working contact form via Resend, deployed on Vercel with Cloudflare DNS.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Resend", "Vercel"],
     featured: true,
-    year: "2025",
+    year: "2026",
     color: "purple",
     links: {
       github: "https://github.com/Kienda/abdoulayediallo",
