@@ -84,7 +84,7 @@ export default function HomePage() {
               <p className="mt-4 max-w-xl text-base text-neutral-700">
                 CS student at Columbia University building production web
                 applications. Looking for Software Engineering internships for
-                Summer 2026.
+                Summer 2027.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -127,7 +127,6 @@ export default function HomePage() {
           {/* Stats */}
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             <Stat title="Columbia CS '28" desc="B.A. Computer Science, New York" />
-            <Stat title="3.6 GPA" desc="Dean's List, academic excellence" />
             <Stat title="10+ Projects" desc="Web apps, platforms & tools" />
             <Stat title="JKC Scholar" desc="Jack Kent Cooke Scholar" />
           </div>
@@ -200,7 +199,7 @@ export default function HomePage() {
                   a focus on clean architecture and production reliability.
                 </p>
                 <p className="mt-4 text-sm font-semibold text-neutral-800">
-                  Seeking Software Engineering internships for Summer 2026.
+                  Seeking Software Engineering internships for Summer 2027.
                 </p>
               </div>
             </div>

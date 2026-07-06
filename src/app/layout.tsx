@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdoulaye Diallo | Software Engineer",
     description:
-      "CS student at Columbia University building production web applications. Looking for Software Engineering internships for Summer 2026.",
+      "CS student at Columbia University building production web applications. Looking for Software Engineering internships for Summer 2027.",
     url: "https://abdoulayediallo.com",
     siteName: "Abdoulaye Diallo",
     type: "website",
