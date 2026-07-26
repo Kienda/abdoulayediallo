@@ -67,7 +67,7 @@ export default function ProjectRowCard({ project }: { project: Project }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-neutral-900 hover:underline"
               >
-                Live Demo <span aria-hidden>↗</span>
+                Live <span aria-hidden>↗</span>
               </a>
             )}
           </div>

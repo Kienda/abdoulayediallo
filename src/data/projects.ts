@@ -24,13 +24,67 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "heuvia",
+    title: "Heuvia — LMS Platform",
+    category: "web",
+    summary:
+      "Multi-tenant Learning Management System for colleges in Guinea. Subdomain routing (Nginx + Cloudflare), a 4-role permission system, and curriculum-based enrollment. Built as Tech Lead of a 5-person team; development complete, preparing first institutional rollout.",
+    tags: ["React", "React Native", "Node.js", "PostgreSQL", "Nginx", "Cloudflare"],
+    featured: true,
+    color: "blue",
+    links: {
+      // Private repo — no GitHub link.
+      demo: "https://www.heuvia.com",
+    },
+  },
+  {
+    slug: "tontin",
+    title: "Tontin — Group Savings Fintech",
+    category: "web",
+    summary:
+      "Digital tontine app with wallets, group contribution pots, savings vaults, and a member trust-scoring system. FastAPI backend with full CRUD, self-deployed on AWS.",
+    tags: ["FastAPI", "Python", "PostgreSQL", "AWS"],
+    featured: true,
+    color: "green",
+    links: {
+      demo: "https://tontin.net",
+    },
+  },
+  {
+    slug: "unofficial-guide-rag",
+    title: "The Unofficial Guide — RAG System",
+    category: "web",
+    summary:
+      "Retrieval-Augmented Generation system answering questions over Columbia CS professor reviews, with grounded generation and source citations. Collected 376 reviews, indexed embeddings (all-MiniLM-L6-v2) in ChromaDB.",
+    tags: ["Python", "ChromaDB", "sentence-transformers", "Groq"],
+    featured: true,
+    color: "purple",
+    links: {
+      github:
+        "https://github.com/Kienda/ai201-project1-unofficial-guide-starter",
+    },
+  },
+  {
+    slug: "alkule",
+    title: "Alkule — Language Learning Platform",
+    category: "web",
+    summary:
+      "Live platform for learning the ADLaM (Fulani) script, with typing practice, courses, and a media library. Firebase auth/storage, PostgreSQL data, deployed on Railway with Cloudflare DNS/SSL.",
+    tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Firebase"],
+    featured: false,
+    color: "pink",
+    links: {
+      demo: "https://alkule.com",
+    },
+  },
+  {
     slug: "studentsuccess",
     title: "StudentSuccess",
     category: "web",
     summary:
       "Full-stack academic guidance platform with role-based auth (admin/student), personalized dashboards, and CRUD operations backed by PostgreSQL.",
     tags: ["Node.js", "Express", "PostgreSQL", "JWT", "Handlebars", "bcrypt"],
-    featured: true,
+    featured: false,
     year: "2025",
     color: "blue",
     links: {
@@ -44,7 +98,7 @@ export const projects: Project[] = [
     summary:
       "Desktop academic tracking app built in C++ with Qt and SQLite. Helps students track milestones and receive personalized academic guidance.",
     tags: ["C++", "Qt", "SQLite", "Desktop App"],
-    featured: true,
+    featured: false,
     year: "2024",
     color: "green",
     links: {
@@ -58,7 +112,7 @@ export const projects: Project[] = [
     summary:
       "This site — built with Next.js, TypeScript, and Tailwind. Includes a working contact form via Resend, deployed on Vercel with Cloudflare DNS.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Resend", "Vercel"],
-    featured: true,
+    featured: false,
     year: "2026",
     color: "purple",
     links: {

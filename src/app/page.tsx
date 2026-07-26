@@ -23,20 +23,49 @@ const SKILLS = [
   },
   {
     label: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS"],
+    items: ["React", "React Native", "Next.js", "Tailwind CSS", "HTML", "CSS"],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Express", "PostgreSQL", "REST APIs", "JWT"],
+    items: ["Node.js", "Express", "FastAPI", "PostgreSQL", "REST APIs", "JWT"],
   },
   {
-    label: "Tools",
-    items: ["Git", "GitHub Actions", "Docker", "Vercel", "Render"],
+    label: "Tools & Infrastructure",
+    items: [
+      "Git",
+      "GitHub Actions",
+      "Docker",
+      "Vercel",
+      "Render",
+      "AWS",
+      "Firebase",
+      "Nginx",
+      "Cloudflare",
+      "Linux",
+    ],
+  },
+  {
+    label: "AI / Data",
+    items: [
+      "ChromaDB",
+      "Retrieval-Augmented Generation (RAG)",
+      "sentence-transformers",
+    ],
   },
 ] as const;
 
 // ─── Experience data ──────────────────────────────────────────────────────────
 const EXPERIENCE = [
+  {
+    role: "Software Engineer & Tech Lead",
+    company: "Heuvia",
+    dates: "2025 – Present",
+    bullets: [
+      "Lead a 5-person team that built a multi-tenant LMS for colleges in Guinea (development complete, preparing first rollout).",
+      "Designed the architecture: subdomain routing (Nginx + Cloudflare), 4-role permissions, curriculum-based enrollment on a React / React Native / Node.js / PostgreSQL stack.",
+      "Own production deployment across web and mobile, plus code review and team coordination.",
+    ],
+  },
   {
     role: "IRT Support Specialist",
     company: "Research Foundation of CUNY",
@@ -293,7 +322,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="text-sm font-semibold text-neutral-500 hover:text-neutral-800 hover:underline"
             >
-              Live Demo ↗
+              Live ↗
             </a>
           )}
         </div>
