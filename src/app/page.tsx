@@ -149,8 +149,9 @@ export default function HomePage() {
               </RevealItem>
             </RevealGroup>
 
-            {/* Photo */}
-            <Reveal className="flex justify-center md:justify-end">
+            {/* Photo — deliberately NOT animated: it is the LCP element, and
+                fading it in would make the largest paint wait on hydration. */}
+            <div className="flex justify-center md:justify-end">
               <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white shadow-md">
                 <Image
                   src="/profile.jpg"
@@ -160,7 +161,7 @@ export default function HomePage() {
                   priority
                 />
               </div>
-            </Reveal>
+            </div>
           </div>
 
           {/* Stats */}
