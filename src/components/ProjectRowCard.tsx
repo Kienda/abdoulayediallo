@@ -1,5 +1,6 @@
 // src/components/ProjectRowCard.tsx
 import type { Project } from "@/data/projects";
+import { HoverLift } from "@/components/motion/Motion";
 
 const PROJECT_COLORS: Record<string, { from: string; to: string }> = {
   blue:   { from: "#1f55c6", to: "#3730a3" },
@@ -12,7 +13,7 @@ export default function ProjectRowCard({ project }: { project: Project }) {
   const colors = PROJECT_COLORS[project.color ?? "blue"];
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+    <HoverLift className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       <div className="grid md:grid-cols-[260px_1fr]">
         {/* Left — gradient block */}
         <div
@@ -65,14 +66,19 @@ export default function ProjectRowCard({ project }: { project: Project }) {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-neutral-900 hover:underline"
+                className={[
+                  "inline-flex items-center gap-1.5 text-sm font-semibold",
+                  project.links.demoLabel === "Play"
+                    ? "rounded-lg bg-[#1f55c6] px-3.5 py-2 text-white transition hover:bg-[#1848aa]"
+                    : "text-neutral-600 hover:text-neutral-900 hover:underline",
+                ].join(" ")}
               >
-                Live <span aria-hidden>↗</span>
+                {project.links.demoLabel ?? "Live"} <span aria-hidden>↗</span>
               </a>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </HoverLift>
   );
 }

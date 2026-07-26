@@ -1,6 +1,6 @@
 // src/data/projects.ts
 
-export type ProjectCategory = "web" | "design";
+export type ProjectCategory = "web" | "game" | "design";
 
 export type ProjectColor = "blue" | "green" | "purple" | "pink";
 
@@ -15,6 +15,7 @@ export type Project = {
   color?: ProjectColor;
   links?: {
     demo?: string;
+    demoLabel?: string;
     github?: string;
     figma?: string;
     caseStudy?: string;
@@ -62,6 +63,21 @@ export const projects: Project[] = [
     links: {
       github:
         "https://github.com/Kienda/ai201-project1-unofficial-guide-starter",
+    },
+  },
+  {
+    slug: "thirst-to-thrive",
+    title: "Thirst to Thrive — Interactive Browser Game",
+    category: "game",
+    summary:
+      "A narrative resource-management game inspired by charity: water's mission. Restore clean water to a village through missions, difficulty modes, a hope and health system, inventory, badges, and full keyboard and mobile controls.",
+    tags: ["JavaScript", "HTML5", "CSS", "Game State Management"],
+    featured: false,
+    color: "blue",
+    links: {
+      demo: "https://kienda.github.io/05-charity-water-game-prototype/",
+      demoLabel: "Play",
+      github: "https://github.com/Kienda/05-charity-water-game-prototype",
     },
   },
   {

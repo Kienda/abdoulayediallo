@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { projects, type Project, type ProjectColor } from "@/data/projects";
+import { Reveal, RevealGroup, RevealItem, HoverLift } from "@/components/motion/Motion";
 
 // ─── Gradient color map (defined here so Tailwind scans are not needed) ───────
 const PROJECT_COLORS: Record<ProjectColor, { from: string; to: string }> = {
@@ -103,44 +104,53 @@ export default function HomePage() {
       <section className="py-14">
         <Container>
           <div className="grid items-center gap-10 md:grid-cols-2">
-            <div>
-              <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-                Abdoulaye Diallo
-              </h1>
-              <p className="mt-2 text-lg font-semibold text-[#1f55c6]">
-                Software Engineer · Building scalable full-stack applications
-              </p>
-              <p className="mt-4 max-w-xl text-base text-neutral-700">
-                CS student at Columbia University building production web
-                applications. Looking for Software Engineering internships for
-                Summer 2027.
-              </p>
+            {/* Headline, subtitle and CTAs fade-and-rise in sequence, once, on load */}
+            <RevealGroup trigger="mount">
+              <RevealItem>
+                <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+                  Abdoulaye Diallo
+                </h1>
+              </RevealItem>
+              <RevealItem className="mt-2">
+                <p className="text-lg font-semibold text-[#1f55c6]">
+                  Software Engineer · Building scalable full-stack applications
+                </p>
+              </RevealItem>
+              <RevealItem className="mt-4">
+                <p className="max-w-xl text-base text-neutral-700">
+                  CS student at Columbia University building production web
+                  applications. Looking for Software Engineering internships for
+                  Summer 2027.
+                </p>
+              </RevealItem>
 
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/projects"
-                  className="rounded-lg bg-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
-                >
-                  View Projects
-                </Link>
-                <Link
-                  href="/Resume-AbdoulayeDiallo.pdf"
-                  target="_blank"
-                  className="rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] hover:bg-blue-50"
-                >
-                  Resume
-                </Link>
-                <Link
-                  href="/#contact"
-                  className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
-                >
-                  Contact Me
-                </Link>
-              </div>
-            </div>
+              <RevealItem className="mt-7">
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/projects"
+                    className="rounded-lg bg-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:opacity-95 motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    View Projects
+                  </Link>
+                  <Link
+                    href="/Resume-AbdoulayeDiallo.pdf"
+                    target="_blank"
+                    className="rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] transition hover:-translate-y-0.5 hover:bg-blue-50 motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    Resume
+                  </Link>
+                  <Link
+                    href="/#contact"
+                    className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:-translate-y-0.5 hover:bg-neutral-50 motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    Contact Me
+                  </Link>
+                </div>
+              </RevealItem>
+            </RevealGroup>
 
             {/* Photo */}
-            <div className="flex justify-center md:justify-end">
+            <Reveal className="flex justify-center md:justify-end">
               <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white shadow-md">
                 <Image
                   src="/profile.jpg"
@@ -150,22 +160,28 @@ export default function HomePage() {
                   priority
                 />
               </div>
-            </div>
+            </Reveal>
           </div>
 
           {/* Stats */}
-          <div className="mt-12 grid gap-8 md:grid-cols-4">
-            <Stat title="Columbia CS '28" desc="B.A. Computer Science, New York" />
-            <Stat title="10+ Projects" desc="Web apps, platforms & tools" />
-            <Stat title="JKC Scholar" desc="Jack Kent Cooke Scholar" />
-          </div>
+          <RevealGroup className="mt-12 grid gap-8 md:grid-cols-4">
+            <RevealItem>
+              <Stat title="Columbia CS '28" desc="B.A. Computer Science, New York" />
+            </RevealItem>
+            <RevealItem>
+              <Stat title="10+ Projects" desc="Web apps, platforms & tools" />
+            </RevealItem>
+            <RevealItem>
+              <Stat title="JKC Scholar" desc="Jack Kent Cooke Scholar" />
+            </RevealItem>
+          </RevealGroup>
         </Container>
       </section>
 
       {/* ── FEATURED PROJECTS ─────────────────────────────────────────────── */}
       <section className="py-8">
         <Container>
-          <div className="mb-6 flex items-center justify-between">
+          <Reveal className="mb-6 flex items-center justify-between">
             <div>
               <h2 className="text-xl font-bold">Featured Projects</h2>
               <p className="mt-1 text-sm text-neutral-600">
@@ -178,34 +194,40 @@ export default function HomePage() {
             >
               View all →
             </Link>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <RevealGroup className="grid gap-6 md:grid-cols-3">
             {featuredProjects.map((p) => (
-              <FeaturedProjectCard key={p.slug} project={p} />
+              <RevealItem key={p.slug} className="h-full">
+                <FeaturedProjectCard project={p} />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </Container>
       </section>
 
       {/* ── SKILLS ───────────────────────────────────────────────────────── */}
       <section className="py-8">
         <Container>
-          <h2 className="mb-6 text-xl font-bold">Skills</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal>
+            <h2 className="mb-6 text-xl font-bold">Skills</h2>
+          </Reveal>
+          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SKILLS.map((group) => (
-              <SkillGroup key={group.label} label={group.label} items={group.items} />
+              <RevealItem key={group.label} className="h-full">
+                <SkillGroup label={group.label} items={group.items} />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </Container>
       </section>
 
       {/* ── ABOUT ────────────────────────────────────────────────────────── */}
       <section id="about" className="py-10 scroll-mt-24">
         <Container>
-          <div className="mb-3 text-sm font-semibold text-neutral-800">About:</div>
+          <Reveal className="mb-3 text-sm font-semibold text-neutral-800">About:</Reveal>
 
-          <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <Reveal className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
             <div className="grid md:grid-cols-[240px_1fr]">
               <div className="p-6 md:p-7">
                 <div className="relative h-48 w-48 overflow-hidden rounded-full bg-white shadow-md">
@@ -232,30 +254,34 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* ── EXPERIENCE ───────────────────────────────────────────────────── */}
       <section id="experience" className="py-10 scroll-mt-24">
         <Container>
-          <div className="mb-4 text-sm font-semibold text-neutral-800">Experience:</div>
-          <div className="space-y-4">
+          <Reveal className="mb-4 text-sm font-semibold text-neutral-800">Experience:</Reveal>
+          <RevealGroup className="space-y-4">
             {EXPERIENCE.map((e) => (
-              <ExperienceCard key={e.role + e.company} {...e} />
+              <RevealItem key={e.role + e.company}>
+                <ExperienceCard {...e} />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </Container>
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────────────────────── */}
       <section id="contact" className="py-10 scroll-mt-24">
         <Container>
-          <div className="text-center text-sm font-semibold text-neutral-800">Contact:</div>
+          <Reveal className="text-center text-sm font-semibold text-neutral-800">
+            Contact:
+          </Reveal>
 
-          <div className="mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <Reveal className="mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
             <ContactForm />
-          </div>
+          </Reveal>
         </Container>
       </section>
     </>
@@ -277,7 +303,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   const colors = PROJECT_COLORS[project.color ?? "blue"];
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+    <HoverLift className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       {/* Gradient header */}
       <div
         className="flex h-36 items-center justify-center px-6"
@@ -322,31 +348,33 @@ function FeaturedProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="text-sm font-semibold text-neutral-500 hover:text-neutral-800 hover:underline"
             >
-              Live ↗
+              {project.links.demoLabel ?? "Live"} ↗
             </a>
           )}
         </div>
       </div>
-    </div>
+    </HoverLift>
   );
 }
 
 function SkillGroup({ label, items }: { label: string; items: readonly string[] }) {
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+    <div className="h-full rounded-2xl border border-neutral-200 bg-white p-5">
       <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-500">
         {label}
       </div>
-      <div className="flex flex-wrap gap-2">
+      {/* Pills appear in a quick sequence — tighter stagger than the cards */}
+      <RevealGroup className="flex flex-wrap gap-2" stagger={0.04}>
         {items.map((skill) => (
-          <span
+          <RevealItem
             key={skill}
+            as="span"
             className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-800"
           >
             {skill}
-          </span>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </div>
   );
 }

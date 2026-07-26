@@ -4,6 +4,7 @@ import type { Project } from "@/data/projects";
 
 const categoryLabel: Record<Project["category"], string> = {
   web: "Web App",
+  game: "Interactive Game",
   design: "Design",
 };
 
@@ -57,7 +58,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noreferrer"
           >
-            Demo
+            {project.links.demoLabel ?? "Demo"}
           </a>
         ) : null}
 

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 export const metadata: Metadata = {
   title: "Abdoulaye Diallo | Software Engineer",
@@ -32,10 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-neutral-900 antialiased">
-  <Navbar />
-  <main className="min-h-[70vh]">{children}</main>
-  <Footer />
-</body>
+        <MotionProvider>
+          <Navbar />
+          <main className="min-h-[70vh]">{children}</main>
+          <Footer />
+        </MotionProvider>
+      </body>
     </html>
   );
 }

@@ -3,3 +3,19 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*
+ * Reduced-motion hard stop.
+ *
+ * Animated elements are marked with [data-motion] and start at opacity 0 in the
+ * server-rendered HTML. This rule wins over Framer Motion's inline styles
+ * (a stylesheet !important beats an inline declaration), so users who ask for
+ * reduced motion see all content immediately, with no movement — and it also
+ * guarantees content is readable if JavaScript never runs.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -4,11 +4,13 @@
 import { useMemo, useState } from "react";
 import Container from "@/components/Container";
 import ProjectRowCard from "@/components/ProjectRowCard";
+import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Motion";
 import { projects, type ProjectCategory } from "@/data/projects";
 
 const filters: { label: string; value: "all" | ProjectCategory }[] = [
   { label: "All", value: "all" },
   { label: "Software Engineering", value: "web" },
+  { label: "Interactive", value: "game" },
   { label: "Design", value: "design" },
 ];
 
@@ -35,13 +37,15 @@ export default function ProjectsPage() {
     <Container>
       {/* Header */}
       <section className="py-12">
-        <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
-        <p className="mt-3 max-w-2xl text-neutral-700">
-          A selection of software engineering and design projects — full-stack apps, desktop tools, and UI/UX work.
-        </p>
+        <Reveal>
+          <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
+          <p className="mt-3 max-w-2xl text-neutral-700">
+            A selection of software engineering, interactive, and design projects — full-stack apps, games, desktop tools, and UI/UX work.
+          </p>
+        </Reveal>
 
         {/* Filters + Search */}
-        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <Reveal className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-2">
             {filters.map((f) => {
               const isActive = active === f.value;
@@ -68,16 +72,18 @@ export default function ProjectsPage() {
             placeholder="Search projects..."
             className="w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm outline-none focus:border-[#1f55c6] md:w-80"
           />
-        </div>
+        </Reveal>
       </section>
 
       {/* Rows */}
       <section className="pb-16">
-        <div className="space-y-6">
+        <RevealGroup className="space-y-6">
           {filtered.map((p) => (
-            <ProjectRowCard key={p.slug} project={p} />
+            <RevealItem key={p.slug}>
+              <ProjectRowCard project={p} />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
         {filtered.length === 0 && (
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 text-neutral-700">

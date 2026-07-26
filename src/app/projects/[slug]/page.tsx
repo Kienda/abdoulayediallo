@@ -33,6 +33,30 @@ export default async function ProjectDetailPage({
       <section className="py-12">
         <h1 className="text-5xl font-bold tracking-tight">{project.title}</h1>
         <p className="mt-3 max-w-2xl text-neutral-700">{project.summary}</p>
+        {(project.links?.demo || project.links?.github) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.links.demo && (
+              <a
+                href={project.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-[#1f55c6] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1848aa]"
+              >
+                {project.links.demoLabel ?? "View Live"} <span aria-hidden>↗</span>
+              </a>
+            )}
+            {project.links.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-50"
+              >
+                View Repository <span aria-hidden>↗</span>
+              </a>
+            )}
+          </div>
+        )}
       </section>
 
       {/* ✅ Only show this UI/UX section for the design project */}
