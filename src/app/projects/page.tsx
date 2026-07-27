@@ -4,7 +4,7 @@
 import { useMemo, useState } from "react";
 import Container from "@/components/Container";
 import ProjectRowCard from "@/components/ProjectRowCard";
-import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Motion";
+import { Reveal } from "@/components/motion/Motion";
 import { projects, type ProjectCategory } from "@/data/projects";
 
 const filters: { label: string; value: "all" | ProjectCategory }[] = [
@@ -77,13 +77,17 @@ export default function ProjectsPage() {
 
       {/* Rows */}
       <section className="pb-16">
-        <RevealGroup className="space-y-6">
-          {filtered.map((p) => (
-            <RevealItem key={p.slug}>
+        {/* Each row owns its reveal rather than being staggered by a parent:
+            this list is filtered/searched, so rows mount and unmount, and a
+            per-row trigger keeps working for rows that appear later. The capped
+            delay keeps the first screenful sequenced without a long chain. */}
+        <div className="space-y-6">
+          {filtered.map((p, i) => (
+            <Reveal key={p.slug} delay={Math.min(i, 5) * 0.06}>
               <ProjectRowCard project={p} />
-            </RevealItem>
+            </Reveal>
           ))}
-        </RevealGroup>
+        </div>
 
         {filtered.length === 0 && (
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 text-neutral-700">

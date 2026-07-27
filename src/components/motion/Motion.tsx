@@ -1,8 +1,14 @@
 // src/components/motion/Motion.tsx
 "use client";
 
-import { motion, useReducedMotion, type HTMLMotionProps, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import {
+  motion,
+  useInView,
+  useReducedMotion,
+  type HTMLMotionProps,
+  type Variants,
+} from "framer-motion";
+import { useRef, type ReactNode, type Ref } from "react";
 
 // ─── Shared motion constants ──────────────────────────────────────────────────
 // Short and quiet on purpose: content should never be waited on.
@@ -26,7 +32,10 @@ type Tag = "div" | "span";
  * Renders a motion element as either a div or a span. Both branches reference
  * module-level components, so nothing is created during render.
  */
-function MotionBox({ as = "div", ...rest }: HTMLMotionProps<"div"> & { as?: Tag }) {
+function MotionBox({
+  as = "div",
+  ...rest
+}: HTMLMotionProps<"div"> & { as?: Tag; ref?: Ref<HTMLDivElement> }) {
   if (as === "span") {
     return <motion.span {...(rest as HTMLMotionProps<"span">)} />;
   }
@@ -78,6 +87,13 @@ export function Reveal({
  *
  * `trigger="mount"` runs once on page load (used by the hero); the default
  * `"view"` waits until the group scrolls into view.
+ *
+ * Uses `useInView` + a persistent `animate` variant rather than `whileInView`.
+ * `whileInView` with `once: true` is a one-shot gesture: after it fires it stops
+ * driving the subtree, so any child that mounts LATER (e.g. a list re-rendering
+ * after a filter change) inherits `initial="hidden"` and is never animated to
+ * visible — it just stays at opacity 0. A latched `animate` state keeps working
+ * for children that arrive after the group first appeared.
  */
 export function RevealGroup({
   children,
@@ -87,6 +103,9 @@ export function RevealGroup({
   trigger = "view",
 }: BaseProps & { stagger?: number; trigger?: "view" | "mount" }) {
   const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, VIEWPORT);
+  const shown = trigger === "mount" || inView;
 
   const variants: Variants = {
     hidden: {},
@@ -95,13 +114,12 @@ export function RevealGroup({
 
   return (
     <MotionBox
+      ref={ref}
       as={as}
       className={className}
       variants={variants}
       initial="hidden"
-      {...(trigger === "mount"
-        ? { animate: "visible" }
-        : { whileInView: "visible", viewport: VIEWPORT })}
+      animate={shown ? "visible" : "hidden"}
     >
       {children}
     </MotionBox>
