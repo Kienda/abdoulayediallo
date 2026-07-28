@@ -1,6 +1,7 @@
 // src/components/ProjectRowCard.tsx
 import type { Project } from "@/data/projects";
 import { HoverLift } from "@/components/motion/Motion";
+import { Icon } from "@/components/Icons";
 
 const PROJECT_COLORS: Record<string, { from: string; to: string }> = {
   blue:   { from: "#1f55c6", to: "#3730a3" },
@@ -58,7 +59,7 @@ export default function ProjectRowCard({ project }: { project: Project }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1f55c6] hover:underline"
               >
-                GitHub <span aria-hidden>→</span>
+                <Icon name="github" className="h-4 w-4" /> GitHub <Icon name="arrow" className="h-3.5 w-3.5" />
               </a>
             )}
             {project.links?.demo && (
@@ -73,7 +74,7 @@ export default function ProjectRowCard({ project }: { project: Project }) {
                     : "text-neutral-600 hover:text-neutral-900 hover:underline",
                 ].join(" ")}
               >
-                {project.links.demoLabel ?? "Live"} <span aria-hidden>↗</span>
+                {project.links.demoLabel ?? "Live"} <Icon name="external" className="h-3.5 w-3.5" />
               </a>
             )}
           </div>

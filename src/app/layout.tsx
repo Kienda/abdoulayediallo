@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/motion/MotionProvider";
+import ScrollProgress from "@/components/motion/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Abdoulaye Diallo | Software Engineer",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-white text-neutral-900 antialiased">
         <MotionProvider>
+          <ScrollProgress />
           <Navbar />
           <main className="min-h-[70vh]">{children}</main>
           <Footer />

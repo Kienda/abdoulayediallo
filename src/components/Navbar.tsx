@@ -1,6 +1,7 @@
 // src/components/Navbar.tsx
 import Link from "next/link";
 import Container from "./Container";
+import { Icon } from "./Icons";
 
 export default function Navbar() {
   return (
@@ -21,17 +22,17 @@ export default function Navbar() {
 
           {/* Right: nav */}
           <nav className="hidden items-center gap-6 text-sm md:flex">
-            <Link className="text-white/90 hover:text-white" href="/projects">
-              Projects
+            <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/projects">
+              <Icon name="layers" className="h-4 w-4" /> Projects
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/Resume-AbdoulayeDiallo.pdf"  target="_blank">
-              Resume
+            <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/Resume-AbdoulayeDiallo.pdf"  target="_blank">
+              <Icon name="download" className="h-4 w-4" /> Resume
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/#about">
-              About
+            <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/#about">
+              <Icon name="user" className="h-4 w-4" /> About
             </Link>
-            <Link className="text-white/90 hover:text-white" href="/#contact">
-              Contact
+            <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/#contact">
+              <Icon name="mail" className="h-4 w-4" /> Contact
             </Link>
           </nav>
 

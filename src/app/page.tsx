@@ -5,6 +5,7 @@ import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { projects, type Project, type ProjectColor } from "@/data/projects";
 import { Reveal, RevealGroup, RevealItem, HoverLift } from "@/components/motion/Motion";
+import { Icon, type IconName } from "@/components/Icons";
 
 // ─── Gradient color map (defined here so Tailwind scans are not needed) ───────
 const PROJECT_COLORS: Record<ProjectColor, { from: string; to: string }> = {
@@ -20,18 +21,22 @@ const featuredProjects = projects.filter((p) => p.featured);
 const SKILLS = [
   {
     label: "Languages",
+    icon: "code",
     items: ["Python", "C++", "JavaScript", "TypeScript", "SQL"],
   },
   {
     label: "Frontend",
+    icon: "layers",
     items: ["React", "React Native", "Next.js", "Tailwind CSS", "HTML", "CSS"],
   },
   {
     label: "Backend",
+    icon: "database",
     items: ["Node.js", "Express", "FastAPI", "PostgreSQL", "REST APIs", "JWT"],
   },
   {
     label: "Tools & Infrastructure",
+    icon: "tools",
     items: [
       "Git",
       "GitHub Actions",
@@ -47,6 +52,7 @@ const SKILLS = [
   },
   {
     label: "AI / Data",
+    icon: "sparkles",
     items: [
       "ChromaDB",
       "Retrieval-Augmented Generation (RAG)",
@@ -128,22 +134,22 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/projects"
-                    className="rounded-lg bg-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:opacity-95 motion-reduce:transform-none motion-reduce:transition-none"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:opacity-95 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    View Projects
+                    <Icon name="rocket" className="h-4 w-4" /> View Projects
                   </Link>
                   <Link
                     href="/Resume-AbdoulayeDiallo.pdf"
                     target="_blank"
-                    className="rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] transition hover:-translate-y-0.5 hover:bg-blue-50 motion-reduce:transform-none motion-reduce:transition-none"
+                    className="inline-flex items-center gap-2 rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] transition hover:-translate-y-0.5 hover:bg-blue-50 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    Resume
+                    <Icon name="download" className="h-4 w-4" /> Resume
                   </Link>
                   <Link
                     href="/#contact"
-                    className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:-translate-y-0.5 hover:bg-neutral-50 motion-reduce:transform-none motion-reduce:transition-none"
+                    className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:-translate-y-0.5 hover:bg-neutral-50 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    Contact Me
+                    <Icon name="mail" className="h-4 w-4" /> Contact Me
                   </Link>
                 </div>
               </RevealItem>
@@ -167,13 +173,13 @@ export default function HomePage() {
           {/* Stats */}
           <RevealGroup className="mt-12 grid gap-8 md:grid-cols-4">
             <RevealItem>
-              <Stat title="Columbia CS '28" desc="B.A. Computer Science, New York" />
+              <Stat icon="graduation" title="Columbia CS '28" desc="B.A. Computer Science, New York" />
             </RevealItem>
             <RevealItem>
-              <Stat title="10+ Projects" desc="Web apps, platforms & tools" />
+              <Stat icon="code" title="10+ Projects" desc="Web apps, platforms & tools" />
             </RevealItem>
             <RevealItem>
-              <Stat title="JKC Scholar" desc="Jack Kent Cooke Scholar" />
+              <Stat icon="sparkles" title="JKC Scholar" desc="Jack Kent Cooke Scholar" />
             </RevealItem>
           </RevealGroup>
         </Container>
@@ -216,7 +222,7 @@ export default function HomePage() {
           <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SKILLS.map((group) => (
               <RevealItem key={group.label} className="h-full">
-                <SkillGroup label={group.label} items={group.items} />
+                <SkillGroup label={group.label} icon={group.icon} items={group.items} />
               </RevealItem>
             ))}
           </RevealGroup>
@@ -226,7 +232,7 @@ export default function HomePage() {
       {/* ── ABOUT ────────────────────────────────────────────────────────── */}
       <section id="about" className="py-10 scroll-mt-24">
         <Container>
-          <Reveal className="mb-3 text-sm font-semibold text-neutral-800">About:</Reveal>
+          <Reveal className="mb-4 flex items-center gap-3"><span className="icon-orb h-9 w-9"><Icon name="user" className="h-4 w-4" /></span><h2 className="text-xl font-bold">About</h2></Reveal>
 
           <Reveal className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
             <div className="grid md:grid-cols-[240px_1fr]">
@@ -262,7 +268,7 @@ export default function HomePage() {
       {/* ── EXPERIENCE ───────────────────────────────────────────────────── */}
       <section id="experience" className="py-10 scroll-mt-24">
         <Container>
-          <Reveal className="mb-4 text-sm font-semibold text-neutral-800">Experience:</Reveal>
+          <Reveal className="mb-4 flex items-center gap-3"><span className="icon-orb h-9 w-9"><Icon name="briefcase" className="h-4 w-4" /></span><h2 className="text-xl font-bold">Experience</h2></Reveal>
           <RevealGroup className="space-y-4">
             {EXPERIENCE.map((e) => (
               <RevealItem key={e.role + e.company}>
@@ -276,8 +282,8 @@ export default function HomePage() {
       {/* ── CONTACT ──────────────────────────────────────────────────────── */}
       <section id="contact" className="py-10 scroll-mt-24">
         <Container>
-          <Reveal className="text-center text-sm font-semibold text-neutral-800">
-            Contact:
+          <Reveal className="flex items-center justify-center gap-3">
+            <span className="icon-orb h-9 w-9"><Icon name="mail" className="h-4 w-4" /></span><h2 className="text-xl font-bold">Contact</h2>
           </Reveal>
 
           <Reveal className="mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
@@ -291,11 +297,11 @@ export default function HomePage() {
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function Stat({ title, desc }: { title: string; desc: string }) {
+function Stat({ icon, title, desc }: { icon: IconName; title: string; desc: string }) {
   return (
-    <div>
-      <div className="text-xl font-bold">{title}</div>
-      <div className="mt-1 text-sm text-neutral-600">{desc}</div>
+    <div className="flex items-center gap-3">
+      <span className="icon-orb h-11 w-11"><Icon name={icon} className="h-5 w-5" /></span>
+      <div><div className="text-xl font-bold">{title}</div><div className="mt-1 text-sm text-neutral-600">{desc}</div></div>
     </div>
   );
 }
@@ -358,11 +364,11 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   );
 }
 
-function SkillGroup({ label, items }: { label: string; items: readonly string[] }) {
+function SkillGroup({ label, icon, items }: { label: string; icon: IconName; items: readonly string[] }) {
   return (
     <div className="h-full rounded-2xl border border-neutral-200 bg-white p-5">
-      <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-500">
-        {label}
+      <div className="mb-4 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-600">
+        <span className="icon-orb h-8 w-8"><Icon name={icon} className="h-4 w-4" /></span>{label}
       </div>
       {/* Pills appear in a quick sequence — tighter stagger than the cards */}
       <RevealGroup className="flex flex-wrap gap-2" stagger={0.04}>

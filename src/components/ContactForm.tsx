@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "./Icons";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -77,9 +78,9 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-2 rounded-lg bg-[#1f55c6] px-6 py-2.5 text-sm font-semibold text-white hover:opacity-95 disabled:opacity-60"
+            className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#1f55c6] px-6 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-md disabled:opacity-60"
           >
-            {status === "loading" ? "Sending..." : "Submit"}
+            <Icon name="send" className="h-4 w-4" /> {status === "loading" ? "Sending..." : "Send message"}
           </button>
 
           {status === "success" && (

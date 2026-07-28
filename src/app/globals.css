@@ -4,6 +4,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html { scroll-behavior: smooth; }
+
+::selection { background: #bfdbfe; color: #172554; }
+
+.icon-orb {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 0.75rem;
+  background: #eff6ff;
+  color: #1f55c6;
+}
+
 /*
  * Reduced-motion hard stop.
  *
@@ -14,6 +27,7 @@ body {
  * guarantees content is readable if JavaScript never runs.
  */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   [data-motion] {
     opacity: 1 !important;
     transform: none !important;
