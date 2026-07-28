@@ -138,13 +138,14 @@ export default function HomePage() {
                   >
                     <Icon name="rocket" className="h-4 w-4" /> View Projects
                   </Link>
-                  <Link
+                  <a
                     href="/Resume-AbdoulayeDiallo.pdf"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg border border-[#1f55c6] px-5 py-2.5 text-sm font-semibold text-[#1f55c6] transition hover:-translate-y-0.5 hover:bg-blue-50 motion-reduce:transform-none motion-reduce:transition-none"
                   >
                     <Icon name="download" className="h-4 w-4" /> Resume
-                  </Link>
+                  </a>
                   <Link
                     href="/#contact"
                     className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition hover:-translate-y-0.5 hover:bg-neutral-50 motion-reduce:transform-none motion-reduce:transition-none"

@@ -25,9 +25,9 @@ export default function Navbar() {
             <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/projects">
               <Icon name="layers" className="h-4 w-4" /> Projects
             </Link>
-            <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/Resume-AbdoulayeDiallo.pdf"  target="_blank">
+            <a className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/Resume-AbdoulayeDiallo.pdf" target="_blank" rel="noopener noreferrer">
               <Icon name="download" className="h-4 w-4" /> Resume
-            </Link>
+            </a>
             <Link className="inline-flex items-center gap-1.5 text-white/90 transition hover:-translate-y-0.5 hover:text-white" href="/#about">
               <Icon name="user" className="h-4 w-4" /> About
             </Link>
