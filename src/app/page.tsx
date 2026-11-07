@@ -3,6 +3,7 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import HonorsRecognition from "@/components/HonorsRecognition";
 import { projects, type Project, type ProjectColor } from "@/data/projects";
 import { Reveal, RevealGroup, RevealItem, HoverLift } from "@/components/motion/Motion";
 import { Icon, type IconName } from "@/components/Icons";
@@ -267,6 +268,8 @@ export default function HomePage() {
       </section>
 
       {/* ── EXPERIENCE ───────────────────────────────────────────────────── */}
+      <HonorsRecognition />
+
       <section id="experience" className="py-10 scroll-mt-24">
         <Container>
           <Reveal className="mb-4 flex items-center gap-3"><span className="icon-orb h-9 w-9"><Icon name="briefcase" className="h-4 w-4" /></span><h2 className="text-xl font-bold">Experience</h2></Reveal>
